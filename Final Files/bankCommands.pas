@@ -478,7 +478,7 @@ end;
 
 procedure lihatSaldo (T : TTabRekening);
 { I.S. : T terdefinisi, T.N>0}
-{ F.S. : menghasilkan saldo dari nomor rekening input }
+{ F.S. : menghasilkan saldo dari nomor rekening input jika ada, memberi pesan kesalahan jika rekening tidak ada }
 { Kamus Lokal }
 var
 	Idx : integer;
@@ -1071,8 +1071,8 @@ begin
 end;
 
 procedure transfer;
-{ I.S. }
-{ F.S. }
+{ I.S. : array of TRekening terdefinisi }
+{ F.S. : status transfer tertulis pada layar; jika transfer berhasil, saldo rekening dan array of  TTransfer diupdate }
 
 { Kamus Lokal }
 var
@@ -1207,8 +1207,9 @@ end;
 (* F10 - F11 oleh Gabriella, dengan berbagai modifikasi pada sumber kode *)
 
 procedure bayar;
-{ I.S. }
-{ F.S. }
+{ I.S. : array of TRekening terdefinisi }
+{ F.S. : status pembayaran tertulis pada layar; jika pembayaran berhasil, saldo rekening dan array of  TBayar diupdate }
+
 {Karena ada 9 kategori, maka file penuh bila ada 9 data berisi tiap kategori}
 {Jika file kosong, diasumsikan nasabah belum berlangganan sebelumnya}
 
@@ -1319,8 +1320,9 @@ Begin
 end;
 
 procedure beli;
-{ I.S. }
-{ F.S. }
+{ I.S. : array of TRekening terdefinisi }
+{ F.S. : status pembelian tertulis pada layar; jika pembelian berhasil, saldo rekening dan array of  TBeli diupdate }
+
 { Kamus Lokal }
 var
 	j : integer;
@@ -1381,6 +1383,9 @@ end;
 (* F12 - F14 oleh Felix, dengan berbagai modifikasi *)
 
 procedure deleteRekening(i : integer; var rekeningOnlineArray : TTabRekening);
+{ I.S. : array of TRekening terdefinisi, indeks array of TRekening dari rekening yang akan dihapus terdefinisi  }
+{ F.S. : data satu rekening terhapus dari array of TRekening }
+
 (* ALGORITMA *)
 begin
     if i > 0 then
@@ -1392,6 +1397,9 @@ begin
 end;
 
 procedure tutupRekening();
+{ I.S. : array of TRekening terdefinisi  }
+{ F.S. : rekening telah ditutup }
+
 (* KAMUS LOKAL *)
 const
     Biaya = 25000;
@@ -1488,8 +1496,9 @@ begin
 end;
 
 procedure perubahanDataNasabah();
-{ I.S. : }
-{ F.S. : }
+{ I.S. : array of TNasabah terdefinisi }
+{ F.S. : data nasabah berubah }
+
 { Kamus Lokal }
 var
 	i : integer;
@@ -1510,6 +1519,9 @@ begin
 end;
 
 procedure penambahanAutoDebet();
+{ I.S. : array of TRekening terdefinisi }
+{ F.S. : rekening autodebet terdefinisi }
+
 (* KAMUS LOKAL *)
 var
 	Rek2 : TRekening;
@@ -1577,8 +1589,9 @@ begin
 end;
 
 procedure exit;
-{ I.S. : }
-{ F.S. : }
+{ I.S. : semua file terdefinisi}
+{ F.S. : array of TNasabah, array of TRekening, array of TTransfer, array of TSetorTarik, array of TBayar, array of TBeli telah disalin ke masing-masing file }
+
 { Kamus Lokal }
 var
 	i : integer;
