@@ -16,6 +16,9 @@ var
 	
 	{F1 - F15}
 procedure cLoad;
+{ I.S. : Sembarang }
+{ F.S. : Tiap array penyimpan data dan file yang digunakan terdefinisi }
+
 (* Menyiapkan segala file yang diperlukan dan menyimpannya ke suatu array *)
 begin
 	if (loaded) then
@@ -28,6 +31,8 @@ begin
 end;
 
 procedure cLogin;
+{ I.S. : sembarang }
+{ F.S. : username dari current nasabah dan status login terdefinisi }
 
 begin
 	if (logged = False) then
@@ -41,6 +46,8 @@ begin
 end;
 
 procedure cLihatRekening;
+{ I.S. : sembarang }
+{ F.S. : jika belum login diberikan pesan kesalahan ke layar; jika sudah : semua rekening yang dimiliki current nasabah tertulis di layar }
 
 begin
 	if (logged = True) then
@@ -55,6 +62,8 @@ begin
 end;
 
 procedure cInfoSaldo;
+{ I.S. : sembarang }
+{ F.S. : jika belum login diberikan pesan kesalahan ke layar; jika sudah : saldo dari suatu rekening yang dipilih tertulis di layar }
 
 begin
 	if (logged = True) then
@@ -64,6 +73,8 @@ begin
 end;
 				
 procedure cLihatAktivitasTransaksi;
+{ I.S. : sembarang }
+{ F.S. : jika belum login diberikan pesan kesalahan ke layar; jika sudah : semua aktivitas transaksi dalam jangka waktu yang diinginkan dari rekening yang dipilih tertulis di layar }
 
 begin
 	if (logged = True) then
@@ -73,6 +84,8 @@ begin
 end;
 
 procedure cBuatRekening;
+{ I.S. : sembarang }
+{ F.S. : jika belum login diberikan pesan kesalahan ke layar; jika sudah : jika TabRekening penuh tidak melakukan apa-apa, jika TabRekening tidak penuh, menambah satu rekening baru }
 
 begin
 	if (logged = True) then
@@ -88,6 +101,8 @@ begin
 end;
 
 procedure cSetor;
+{ I.S. : sembarang }
+{ F.S. : jika belum login diberikan pesan kesalahan ke layar; jika sudah : jika TabRekening kosong diberi pesan kesalahan, jika TabSetorTarik penuh tidak melakukan apa-apa, jika TabSetorTarik tidak penuh menambah satu data setoran baru }
 
 begin
 	if (logged = True) then
@@ -105,6 +120,8 @@ begin
 end;
 
 procedure cTarik;
+{ I.S. : sembarang }
+{ F.S. : jika belum login diberikan pesan kesalahan ke layar; jika sudah : jika TabRekening kosong diberi pesan kesalahan, jika TabSetorTarik penuh tidak melakukan apa-apa, jika TabSetorTarik tidak penuh menambah satu data penarikan baru }
 
 begin
 	if (logged = True) then
@@ -122,6 +139,8 @@ begin
 end;
 
 procedure cTransfer;
+{ I.S. : sembarang }
+{ F.S. : jika belum login diberikan pesan kesalahan ke layar; jika sudah : jika TabRekening kosong diberi pesan kesalahan, jika TabTransfer penuh tidak melakukan apa-apa, jika TabTransfer tidak penuh menambah satu data transfer baru }
 
 begin
 	if (logged = True) then
@@ -138,6 +157,8 @@ begin
 end;
 
 procedure cBayar;
+{ I.S. : sembarang }
+{ F.S. : jika belum login diberikan pesan kesalahan ke layar; jika sudah : jika TabRekening kosong diberi pesan kesalahan, jika TabBayar penuh atau kosong tidak melakukan apa-apa, jika TabBayar tidak penuh menambah satu data pembayaran baru }
 
 begin
 	if (logged = True) then
@@ -159,6 +180,8 @@ begin
 end;
 
 procedure cBeli;
+{ I.S. : sembarang }
+{ F.S. : jika belum login diberikan pesan kesalahan ke layar; jika sudah : jika TabRekening kosong diberi pesan kesalahan, jika TabBarang kosong atau TabBeli  penuh tidak melakukan apa-apa, jika TabBarang tidak kosong dan TabBeli tidak penuh menambah satu data pembayaran baru }
 
 begin
 	if (logged = True) then
@@ -179,6 +202,8 @@ begin
 end;
 
 procedure cTutupRekening;
+{ I.S. : sembarang }
+{ F.S. : jika belum login diberikan pesan kesalahan ke layar; jika sudah : jika TabRekening kosong diberi pesan kesalahan, jika tidak kosong suatu rekening ditutup }
 
 begin
 	if (logged = True) then
@@ -193,6 +218,8 @@ begin
 end;
 
 procedure cUbahData;
+{ I.S. : sembarang }
+{ F.S. : jika belum login diberikan pesan kesalahan ke layar; jika sudah : dilakukan pengubahan data nasabah }
 
 begin
 	if (logged = True) then
@@ -202,6 +229,8 @@ begin
 end;
 
 procedure cTambahAutodebet;
+{ I.S. : sembarang }
+{ F.S. : jika belum login diberikan pesan kesalahan ke layar; jika sudah : jika TabRekening kosong diberi pesan kesalahan, jika tidak kosong dilakukan penambahan autodebet }
 
 begin
 	if (logged = True) then
@@ -216,6 +245,8 @@ begin
 end;
 
 procedure cExit;
+{ I.S. : sembarang }
+{ F.S. : jika status login True, keluar dari program (dengan menyimpan data semua array pada file), jika status login False tidak dilakukan apa-apa }
 
 begin
 	if (logged = True) then
